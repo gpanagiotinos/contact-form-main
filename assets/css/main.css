@@ -1,0 +1,223 @@
+:root {
+  --green-light: hsl(148, 38%, 91%);
+  --green: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 56%);
+  --white: hsl(0, 0%, 100%);
+  --grey-medium: hsl(186, 15%, 59%);
+  --grey-dark: hsl(187, 24%, 22%);
+  --fs-big: 20px;
+  --fs-normal: 16px;
+  --fs-small: 14px;
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+@font-face {
+  font-family: "Karla";
+  src: url("../fonts/Karla-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Karla-Italic";
+  src: url("../fonts/Karla-Italic-VariableFont_wght.ttf");
+}
+html {
+  font-family: "Karla Karla-Italic";
+  font-size: var(--fs-normal);
+  font-weight: var(--fw-normal);
+  color: var(--grey-dark);
+  height: 100dvh;
+}
+body {
+  background-color: var(--green-light);
+}
+form {
+  padding: 14px;
+  background-color: var(--white);
+  border-radius: 8px;
+  position: relative;
+  display: grid;
+  gap: 16px;
+}
+h2 {
+  margin: 0;
+}
+label {
+  color: var(--grey-dark);
+}
+input[type="submit"] {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--green);
+  color: var(--white);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  box-shadow: none;
+  text-decoration: none;
+  padding: 10px 18px;
+}
+.label-required::after {
+  content: "  *";
+  color: var(--green);
+  font-size: var(--fs-small);
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px 18px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border-color: var(--grey-medium);
+  outline-color: var(--grey-medium);
+  border-style: solid;
+  border-width: 2px;
+  cursor: pointer;
+}
+.input-radio-container {
+  width: 100%;
+  padding: 10px 18px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border-color: var(--grey-medium);
+  outline-color: var(--grey-medium);
+  border-style: solid;
+  border-width: 2px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
+input[type="text"]:hover,
+input[type="text"]:focus-visible,
+input[type="text"]:focus,
+input[type="email"]:hover,
+input[type="email"]:focus-visible,
+input[type="email"]:focus,
+textarea:hover,
+textarea:focus,
+textarea:focus-visible,
+button,
+label[for="generalEnquiry"]:focus,
+label[for="supportRequest"]:focus {
+  border-color: var(--green);
+  outline-color: var(--green);
+  outline: none;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+input[type="radio"], input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+label[for="consent"] {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  cursor: pointer;
+}
+.label-checked {
+  background-color: var(--green-light);
+}
+.checkmark {
+  width: 14px;
+  height: 14px;
+  border: solid 2px;
+  border-color: var(--grey-medium);
+  border-radius: 20px;
+}
+.checkmark-checkbox {
+  border-radius: 4px;
+}
+input[type="radio"]:checked ~ .checkmark {
+  background-image: url("../images/icon-radio-selected.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+  border-color: transparent;
+}
+
+input[type="checkbox"]:checked ~ .checkmark {
+  background-image: url("../images/icon-checkbox-check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+  border-color: transparent;
+}
+.toast {
+  position: absolute;
+  background-color: var(--grey-dark);
+  color: var(--white);
+  padding: 18px 18px;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+}
+.message-sent-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+.bold {
+  font-weight: var(--fw-bold);
+}
+.error {
+  color: var(--red);
+  font-size: var(--fs-small);
+  display: none;
+}
+.hidden {
+  visibility: hidden;
+}
+input:valid ~ .error, textarea:valid ~ .error {
+  display: none;
+}
+/* input:invalid ~ .error {
+  display: block;
+}
+textarea:invalid ~ .error {
+  display: block;
+} */
+.show {
+  display: block;
+}
+.attribution {
+  font-size: var(--fs-small);
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 10px;
+}
+@media (376px < width < 1440px) {
+}
+@media (width > 650px) {
+  body {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
+  }
+  form {
+    padding: 20px;
+    width: 480px;
+    max-width: 480px;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+  .flex-row {
+    flex-direction: row;
+  }
+}
