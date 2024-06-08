@@ -16,53 +16,81 @@
     <script type="text/javascript" src="./assets/js/submit.js"></script>
   </head>
   <body>
-    <form id="form-contact-us" name="contact-us" onsubmit="return submitForm()" novalidate target="_blank">
+    <form
+      id="form-contact-us"
+      name="contact-us"
+      action=""
+      onsubmit="return submitForm()"
+      validate
+    >
       <div class="header grid-col-span-2">
         <h2>Contact Us</h2>
       </div>
       <div class="input-container">
         <label class="label-required" for="firstName">First Name</label>
         <input type="text" id="firstName" name="First Name" required />
-        <span id="firstName-error" class="error none">This field is required</span>
+        <span id="firstName-error" class="error none"
+          >This field is required</span
+        >
       </div>
       <div class="input-container">
         <label class="label-required" for="lastName">Last Name</label>
         <input type="text" id="lastName" name="Last Name" required />
-        <span id="lastName-error" class="error none">This field is required</span>
+        <span id="lastName-error" class="error none"
+          >This field is required</span
+        >
       </div>
       <div class="input-container grid-col-span-2">
         <label class="label-required" for="emailAddress">Email Address</label>
-        <input type="email" id="emailAddress" name="Email Address" required />
-        <span id="email-required-error" class="error none">This field is required</span>
-        <span id="eamil-invalid-error" class="error none">Please enter a valid email address</span>
+        <input
+          type="email"
+          id="emailAddress"
+          name="Email Address"
+          required
+        />
+        <span id="email-required-error" class="error none"
+          >This field is required</span
+        >
+        <span id="email-invalid-error" class="error none"
+          >Please enter a valid email address</span
+        >
       </div>
       <div class="input-container grid-col-span-2">
         <label class="label-required" for="queryType">Query Type</label>
-        <div class="input-container flex-row">
-          <label id="label-generalEnquiry" for="generalEnquiry" class="input-radio-container">
-            <input
-              type="radio"
-              id="generalEnquiry"
-              name="query_type"
-              value="General Enquiry"
-              required
-            />
+        <div class="radio-container">
+          <input
+            type="radio"
+            id="generalEnquiry"
+            name="query_type"
+            value="General Enquiry"
+            required
+          />
+          <label
+            id="label-generalEnquiry"
+            for="generalEnquiry"
+            class="input-radio-container"
+          >
             <span class="checkmark"></span>
             General Enquiry
-            <!-- <label for="generalEnquiry">General Enquiry</label> -->
           </label>
-          <label id="label-supportRequest" for="supportRequest" class="input-radio-container">
-            <input
-              type="radio"
-              id="supportRequest"
-              name="query_type"
-              value="Support Request"
-              required
-            />
+          <input
+            type="radio"
+            id="supportRequest"
+            name="query_type"
+            value="Support Request"
+            required
+          />
+          <label
+            id="label-supportRequest"
+            for="supportRequest"
+            class="input-radio-container"
+          >
             <span class="checkmark"></span>
             Support Request
           </label>
-          <span id="queryType-error" class="error none">Please select a query type</span>
+          <span id="queryType-error" class="grid-col-span-2 error none"
+            >Please select a query type</span
+          >
         </div>
       </div>
       <div class="input-container grid-col-span-2">
@@ -75,17 +103,19 @@
           name="Message"
           required
         ></textarea>
-        <span id="message-error" class="error none">This field is required</span>
+        <span id="message-error" class="error none"
+          >This field is required</span
+        >
       </div>
       <div class="input-container grid-col-span-2">
+        <input
+          type="checkbox"
+          id="consent"
+          name="consent_type"
+          value="false"
+          required
+        />
         <label for="consent">
-          <input
-            type="checkbox"
-            id="consent"
-            name="consent_type"
-            value="true"
-            required
-          />
           <span class="checkmark checkmark-checkbox"></span>
           <span class="label-required"
             >I consent to being contacted by the team</span
@@ -96,9 +126,14 @@
         >
       </div>
       <div class="grid-col-span-2">
-        <input id="submit" type="submit" value="Submit">
+        <input
+          onclick="return validateForm()"
+          id="submit"
+          type="submit"
+          value="Submit"
+        />
       </div>
-      <div id="toast" class="toast hidden">
+      <div id="toast" class="toast">
         <div class="message-sent-container">
           <img src="./assets/images/icon-success-check.svg" />
           <span class="bold">Message Sent!</span>
@@ -110,7 +145,8 @@
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="mailto:gpanagiotinos@gmail.com">gpanagiotinos@gmail.com</a>.
+      Coded by
+      <a href="mailto:gpanagiotinos@gmail.com">gpanagiotinos@gmail.com</a>.
     </div>
   </body>
   <script async src="./assets/js/main.js"></script>
