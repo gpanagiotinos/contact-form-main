@@ -9,6 +9,7 @@
   --fs-normal: 16px;
   --fs-small: 14px;
   --fw-normal: 400;
+  --fw-medium: 500;
   --fw-bold: 700;
 }
 @font-face {
@@ -53,11 +54,12 @@ input[type="submit"] {
   border: none;
   background-color: var(--green);
   color: var(--white);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-medium);
   font-size: var(--fs-small);
   box-shadow: none;
   text-decoration: none;
   padding: 10px 18px;
+  cursor: pointer;
 }
 .label-required::after {
   content: "  *";
@@ -104,6 +106,8 @@ textarea:hover,
 textarea:focus,
 textarea:focus-visible,
 button,
+label[for="generalEnquiry"]:hover,
+label[for="supportRequest"]:hover,
 label[for="generalEnquiry"]:focus,
 label[for="supportRequest"]:focus {
   border-color: var(--green);
@@ -163,6 +167,7 @@ input[type="checkbox"]:checked + label .checkmark {
   background-position: center;
   background-size: 16px;
   border-color: transparent;
+  border-radius: 6px;
 }
 .toast {
   position: absolute;
@@ -227,9 +232,9 @@ textarea:invalid.error {
   }
   form {
     position: inherit;
-    padding: 20px;
-    width: 480px;
-    max-width: 480px;
+    padding: 40px;
+    width: 600px;
+    max-width: 600px;
     margin: auto;
     grid-template-columns: repeat(2, 1fr);
   }
