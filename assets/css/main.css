@@ -76,6 +76,7 @@ textarea {
   border-style: solid;
   border-width: 2px;
   cursor: pointer;
+  color: var(--grey-dark);
 }
 .input-radio-container {
   width: 100%;
@@ -170,9 +171,6 @@ input[type="checkbox"]:checked + label .checkmark {
   padding: 18px 18px;
   top: -300px;
   left: 0;
-  margin: auto auto;
-  /* left: 50%;
-  transform: translate(-50%, 0); */
   max-width: 400px;
   border-radius: 8px;
 }
@@ -191,8 +189,10 @@ input[type="checkbox"]:checked + label .checkmark {
   font-weight: var(--fw-bold);
 }
 .error {
-  color: var(--red);
   font-size: var(--fs-small);
+}
+span.error {
+  color: var(--red);
 }
 .hidden {
   visibility: hidden;
@@ -200,6 +200,11 @@ input[type="checkbox"]:checked + label .checkmark {
 input:valid ~ .error,
 textarea:valid ~ .error {
   display: none;
+}
+input:invalid.error,
+textarea:invalid.error {
+  border-color: var(--red);
+  outline-color: var(--red);
 }
 .show {
   display: block;

@@ -1,18 +1,26 @@
 function hasErrorText(id, value) {
   const element = document.getElementById(`${id}-error`);
+  const inputEl = document.getElementById(id);
+  if (inputEl) {
+  }
   if (value === null || value === "") {
     element.classList.remove("none");
+    inputEl ? inputEl.classList.add("error") : "";
   } else {
     element.classList.add("none");
+    inputEl ? inputEl.classList.remove("error") : "";
   }
   return;
 }
 function hasErrorCheckbox(id, value) {
   const element = document.getElementById(`${id}-error`);
+  const inputEl = document.getElementById(id);
   if (!value) {
     element.classList.remove("none");
+    inputEl.classList.add("error");
   } else {
     element.classList.add("none");
+    inputEl.classList.remove("error");
   }
   return;
 }
@@ -20,6 +28,12 @@ function hasEmailError(value) {
   const emailPattern = /[^@\s]+@[^@\s]+/;
   const requiredError = document.getElementById(`email-required-error`);
   const invalidError = document.getElementById(`email-invalid-error`);
+  const inputEl = document.getElementById("emailAddress");
+  if (!emailPattern.test(value) || value === null || value === "") {
+    inputEl.classList.add("error");
+  } else {
+    inputEl.classList.remove("error");
+  }
   if (!emailPattern.test(value)) {
     invalidError.classList.remove("none");
   } else {
@@ -34,7 +48,7 @@ function hasEmailError(value) {
 }
 
 function submitForm() {
-  const toast = document.getElementById("toast")
+  const toast = document.getElementById("toast");
   toast.classList.add("success");
   return false;
 }
