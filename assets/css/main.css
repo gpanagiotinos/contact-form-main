@@ -34,6 +34,9 @@ body {
   justify-content: space-between;
   background-color: var(--green-light);
 }
+main {
+  margin: auto;
+}
 form {
   padding: 14px;
   background-color: var(--white);

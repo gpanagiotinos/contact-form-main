@@ -16,135 +16,141 @@
     <script type="text/javascript" src="./assets/js/submit.js"></script>
   </head>
   <body>
-    <form
-      id="form-contact-us"
-      name="contact-us"
-      onsubmit="return submitForm()"
-    >
-      <div class="header grid-col-span-2">
-        <h2>Contact Us</h2>
-      </div>
-      <div class="input-container">
-        <label class="label-required" for="firstName">First Name</label>
-        <input type="text" id="firstName" name="First Name" required autofocus />
-        <span id="firstName-error" class="error none"
-          >This field is required</span
-        >
-      </div>
-      <div class="input-container">
-        <label class="label-required" for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="Last Name" required />
-        <span id="lastName-error" class="error none"
-          >This field is required</span
-        >
-      </div>
-      <div class="input-container grid-col-span-2">
-        <label class="label-required" for="emailAddress">Email Address</label>
-        <input
-          type="email"
-          id="emailAddress"
-          name="Email Address"
-          required
-        />
-        <span id="email-required-error" class="error none"
-          >This field is required</span
-        >
-        <span id="email-invalid-error" class="error none"
-          >Please enter a valid email address</span
-        >
-      </div>
-      <div class="input-container grid-col-span-2">
-        <label class="label-required">Query Type</label>
-        <div class="radio-container">
+    <main>
+      <form
+        id="form-contact-us"
+        name="contact-us"
+        onsubmit="return submitForm()"
+      >
+        <div class="header grid-col-span-2">
+          <h2>Contact Us</h2>
+        </div>
+        <div class="input-container">
+          <label class="label-required" for="firstName">First Name</label>
           <input
-            type="radio"
-            id="generalEnquiry"
-            name="query_type"
-            value="General Enquiry"
+            type="text"
+            id="firstName"
+            name="First Name"
             required
+            autofocus
           />
-          <label
-            id="label-generalEnquiry"
-            for="generalEnquiry"
-            class="input-radio-container"
-          >
-            <span class="checkmark"></span>
-            General Enquiry
-          </label>
-          <input
-            type="radio"
-            id="supportRequest"
-            name="query_type"
-            value="Support Request"
-            required
-          />
-          <label
-            id="label-supportRequest"
-            for="supportRequest"
-            class="input-radio-container"
-          >
-            <span class="checkmark"></span>
-            Support Request
-          </label>
-          <span id="queryType-error" class="grid-col-span-2 error none"
-            >Please select a query type</span
+          <span id="firstName-error" class="error none"
+            >This field is required</span
           >
         </div>
-      </div>
-      <div class="input-container grid-col-span-2">
-        <label for="message" class="label-required">Message </label>
-        <textarea
-          rows="4"
-          cols="50"
-          id="message"
-          name="Message"
-          required
-        ></textarea>
-        <span id="message-error" class="error none"
-          >This field is required</span
-        >
-      </div>
-      <div class="input-container grid-col-span-2">
-        <input
-          type="checkbox"
-          id="consent"
-          name="consent_type"
-          value="false"
-          required
-        />
-        <label for="consent">
-          <span class="checkmark checkmark-checkbox"></span>
-          <span class="label-required"
-            >I consent to being contacted by the team</span
+        <div class="input-container">
+          <label class="label-required" for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="Last Name" required />
+          <span id="lastName-error" class="error none"
+            >This field is required</span
           >
-        </label>
-        <span id="consent-error" class="error none"
-          >To submit this form, please consent to being contacted</span
-        >
-      </div>
-      <div class="grid-col-span-2">
-        <input
-          onclick="return validateForm()"
-          id="submit"
-          type="submit"
-          value="Submit"
-        />
-      </div>
-      <div id="toast" class="toast">
-        <div class="message-sent-container">
-          <img src="./assets/images/icon-success-check.svg" alt="Success Check Icon" />
-          <span class="bold">Message Sent!</span>
         </div>
-        <p>Thanks for completing the form. We'll be in touch soon!</p>
-      </div>
-    </form>
+        <div class="input-container grid-col-span-2">
+          <label class="label-required" for="emailAddress">Email Address</label>
+          <input type="email" id="emailAddress" name="Email Address" required />
+          <span id="email-required-error" class="error none"
+            >This field is required</span
+          >
+          <span id="email-invalid-error" class="error none"
+            >Please enter a valid email address</span
+          >
+        </div>
+        <div class="input-container grid-col-span-2">
+          <label class="label-required">Query Type</label>
+          <div class="radio-container">
+            <input
+              type="radio"
+              id="generalEnquiry"
+              name="query_type"
+              value="General Enquiry"
+              required
+            />
+            <label
+              id="label-generalEnquiry"
+              for="generalEnquiry"
+              class="input-radio-container"
+            >
+              <span class="checkmark"></span>
+              General Enquiry
+            </label>
+            <input
+              type="radio"
+              id="supportRequest"
+              name="query_type"
+              value="Support Request"
+              required
+            />
+            <label
+              id="label-supportRequest"
+              for="supportRequest"
+              class="input-radio-container"
+            >
+              <span class="checkmark"></span>
+              Support Request
+            </label>
+            <span id="queryType-error" class="grid-col-span-2 error none"
+              >Please select a query type</span
+            >
+          </div>
+        </div>
+        <div class="input-container grid-col-span-2">
+          <label for="message" class="label-required">Message </label>
+          <textarea
+            rows="4"
+            cols="50"
+            id="message"
+            name="Message"
+            required
+          ></textarea>
+          <span id="message-error" class="error none"
+            >This field is required</span
+          >
+        </div>
+        <div class="input-container grid-col-span-2">
+          <input
+            type="checkbox"
+            id="consent"
+            name="consent_type"
+            value="false"
+            required
+          />
+          <label for="consent">
+            <span class="checkmark checkmark-checkbox"></span>
+            <span class="label-required"
+              >I consent to being contacted by the team</span
+            >
+          </label>
+          <span id="consent-error" class="error none"
+            >To submit this form, please consent to being contacted</span
+          >
+        </div>
+        <div class="grid-col-span-2">
+          <input
+            onclick="return validateForm()"
+            id="submit"
+            type="submit"
+            value="Submit"
+          />
+        </div>
+        <div id="toast" class="toast">
+          <div class="message-sent-container">
+            <img
+              src="./assets/images/icon-success-check.svg"
+              alt="Success Check Icon"
+            />
+            <span class="bold">Message Sent!</span>
+          </div>
+          <p>Thanks for completing the form. We'll be in touch soon!</p>
+        </div>
+      </form>
+    </main>
 
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by
       <a href="mailto:gpanagiotinos@gmail.com">gpanagiotinos@gmail.com</a>.
-    </div>
+    </footer>
   </body>
   <script async src="./assets/js/main.js"></script>
 </html>
