@@ -19,9 +19,7 @@
     <form
       id="form-contact-us"
       name="contact-us"
-      action=""
       onsubmit="return submitForm()"
-      validate
     >
       <div class="header grid-col-span-2">
         <h2>Contact Us</h2>
@@ -56,7 +54,7 @@
         >
       </div>
       <div class="input-container grid-col-span-2">
-        <label class="label-required" for="queryType">Query Type</label>
+        <label class="label-required">Query Type</label>
         <div class="radio-container">
           <input
             type="radio"
@@ -98,7 +96,6 @@
         <textarea
           rows="4"
           cols="50"
-          type="text"
           id="message"
           name="Message"
           required
